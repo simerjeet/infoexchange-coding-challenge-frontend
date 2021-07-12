@@ -42,7 +42,9 @@ class BookList extends Component {
                 }
 
 <Switch>
-            <Route path = "/book/:postId" component={BookDetails} />
+            <Route path = "/book/:postId" render = {props => <BookDetails key = {props.location.key} {...props} />}
+            // component={BookDetails} />
+            />
             
         </Switch>
                 
