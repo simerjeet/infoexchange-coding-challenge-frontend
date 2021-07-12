@@ -35,15 +35,16 @@ class BookList extends Component {
             <Router>
             <div>
                 <h1>List of Books</h1>
-                
+
                 {
-                    posts.map(post => <div key = {post.id}>{post.name}</div>)
+                    posts.map(post => <Link to={`/book/${post.id}`}><div key = {post.id}>{post.name}</div></Link>)
                     
                 }
 
-                <Switch>
-                <Route exact path = "/BookDetails" component={BookDetails} />
-            </Switch>
+<Switch>
+            <Route path = "/book/:postId" component={BookDetails} />
+            
+        </Switch>
                 
             </div>
             </Router>
